@@ -6,7 +6,7 @@
  * @n: number of characters printed to stdout
  *
  * Return: void
- */
+*/
 void print_int(va_list valist, int *n)
 {
 	int num, num_list[10], i, j, sum = 0;
