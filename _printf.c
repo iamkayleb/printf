@@ -55,6 +55,10 @@ void (*get_specifier(char c))(va_list, int *)
 		{'d', print_int},
 		{'i', print_int},
 		{'b', print_binary},
+		{'u', print_decimal},
+		{'o', print_octal},
+		{'x', print_x},
+		{'X', print_X},
 		{'\0', NULL}
 	};
 
