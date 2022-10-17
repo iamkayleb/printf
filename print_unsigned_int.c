@@ -125,7 +125,10 @@ int print_hex(unsigned int num, int letter_case)
 		sum += num_list[i];
 		if (sum != 0 || i == 7)
 		{
-			_putchar(num_list[i] + diff + '0');
+			if (num_list[i] > 10)
+				_putchar(num_list[i] + '0');
+			else
+				_putchar(num_list[i] + diff + '0');
 			count++;
 		}
 	}
