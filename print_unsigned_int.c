@@ -154,7 +154,7 @@ void print_x(va_list valist, int *n)
  *
  * Return: void
  */
-void print_X(va_list, int *n)
+void print_X(va_list valist, int *n)
 {
 	int count;
 
