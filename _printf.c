@@ -59,6 +59,7 @@ void (*get_specifier(char c))(va_list, int *)
 		{'o', print_octal},
 		{'x', print_x},
 		{'X', print_X},
+		{'S', prrint_special},
 		{'\0', NULL}
 	};
 
