@@ -96,7 +96,9 @@ int _printf(const char *format, ...)
 		}
 		else if (format[i] == '%' && format[i + 1] == '%')
 		{
+			_putchar('%');
 			i += 2;
+			*n += 1;
 		}
 		else
 		{
