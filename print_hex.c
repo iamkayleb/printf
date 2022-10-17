@@ -14,11 +14,13 @@ void print_special(va_list valist, int *n)
 	char *str;
 
 	str = va_arg(valist, char *);
+	if (str == NULL)
+		str = "(null)";
 	for (i = 0; str[i]; i++)
 	{
 		if (str[i] < 32 || str[i] >= 127)
 		{
-			_putchar('/');
+			_putchar('\\');
 			_putchar('x');
 			ascii = str[i];
 			hex_count = print_hex(ascii, 1);
