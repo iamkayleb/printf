@@ -81,6 +81,8 @@ int _printf(const char *format, ...)
 	void (*op_func)(va_list, int *);
 	va_list args;
 
+	if (format == NULL)
+		return (-1);
 	i = n = 0;
 	va_start(args, format);
 	while (format && format[i])
@@ -94,10 +96,10 @@ int _printf(const char *format, ...)
 		}
 		else if (format[i] == '%' && format[i + 1] == '%')
 		{
-			_putchar('%');
 			i += 2;
-			n++;
 		}
+		if (!format[i + 1])
+			return (-1);
 		else
 		{
 			_putchar(format[i]);
