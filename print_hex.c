@@ -8,7 +8,7 @@
 int hex_print(char c)
 {
 	int count;
-	char diff = 'A' : ':';
+	char diff = 'A' - ':';
 	char num_list[2];
 
 	num_list[0] = c / 16;
@@ -33,7 +33,7 @@ int hex_print(char c)
  */
 void print_special(va_list valist, int *n)
 {
-	int i, ascii, hex_count;
+	int i, hex_count;
 	char *str;
 
 	str = va_arg(valist, char *);
@@ -45,8 +45,7 @@ void print_special(va_list valist, int *n)
 		{
 			_putchar('\\');
 			_putchar('x');
-			ascii = str[i];
-			hex_count = hex_print(ascii, 1);
+			hex_count = hex_print(str[i]);
 			*n += hex_count + 2;
 		}
 		else
