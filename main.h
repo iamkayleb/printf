@@ -21,6 +21,11 @@ void print_char(va_list valist, int *n);
 void print_string(va_list valist, int *n);
 void print_int(va_list valist, int *n);
 void print_binary(va_list valist, int *n);
+void print_decimal(va_list valist, int *n);
+void print_octal(va_list valist, int *n);
+void print_hex(va_list valist, int *n);
+void print_x(va_list valist, int *n);
+void print_X(va_list valist, int *n);
 int _printf(const char *format, ...);
 
 #endif /* MAIN_H */
