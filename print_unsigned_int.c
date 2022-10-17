@@ -13,8 +13,6 @@ void print_binary(va_list valist, int *n)
 
 	m = 2147483648; /* 2 ^ 31 */
 	num = va_arg(valist, int);
-	if (num < 0)
-		return;
 	num_list[0] = num / m;
 	for (i = 1; i < 32; i++)
 	{
