@@ -21,7 +21,7 @@ void print_special(va_list valist, int *n)
 			_putchar('/');
 			_putchar('x');
 			ascii = str[i];
-			hex_count = print_hex(ascii, 0);
+			hex_count = print_hex(ascii, 1);
 			*n += hex_count + 2;
 		}
 		else
