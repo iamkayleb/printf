@@ -4,7 +4,7 @@
 
 /*
  * main - Entry point
- */
+*/
 int main(void)
 {
 	char *c = "Caleb", z = 'z';

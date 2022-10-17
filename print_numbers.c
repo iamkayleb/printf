@@ -29,7 +29,7 @@ void print_int(va_list valist, int *n)
 	for (i = 0; i < 10; i++)
 	{
 		sum += num_list[i];
-		if (sum != 0)
+		if (sum != 0 || i==9)
 		{
 			_putchar(num_list[i] + '0');
 			*n += 1;
