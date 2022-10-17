@@ -2,6 +2,9 @@
 #include <stdio.h>
 #include <limits.h>
 
+/*
+ * main.h - Prototypes
+ */
 int main(void)
 {
 	char *c = "Caleb", z = 'z';
