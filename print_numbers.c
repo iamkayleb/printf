@@ -1,6 +1,6 @@
 #include "main.h"
 
-/*
+/**
  * print_int - prints a signed integer
  * @valist: va_list variable
  * @n: number of characters printed to stdout
