@@ -3,7 +3,7 @@
 #include <limits.h>
 
 /*
- * main.h - Prototypes
+ * main - Entry point
  */
 int main(void)
 {
