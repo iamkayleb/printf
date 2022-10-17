@@ -1,12 +1,12 @@
 #include "main.h"
 
-/**
- *  * print_int - prints a signed integer
- *   * @valist: va_list variable
- *    * @n: number of characters printed to stdout
- *     *
- *      * Return: void
- *       */
+/*
+ * print_int - prints a signed integer
+ * @valist: va_list variable
+ * @n: number of characters printed to stdout
+ *
+ * Return: void
+ */
 void print_int(va_list valist, int *n)
 {
 	int num, num_list[10], i, j, sum = 0;
