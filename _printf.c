@@ -100,6 +100,8 @@ int _printf(const char *format, ...)
 			i += 2;
 			n += 1;
 		}
+		else if (format[i] == '%' && format[i + 1] == '\0')
+			return (-1);
 		else
 		{
 			_putchar(format[i]);
