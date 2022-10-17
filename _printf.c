@@ -98,7 +98,7 @@ int _printf(const char *format, ...)
 		{
 			_putchar('%');
 			i += 2;
-			*n += 1;
+			n += 1;
 		}
 		else
 		{
