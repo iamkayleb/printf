@@ -30,6 +30,8 @@ void print_string(va_list valist, int *n)
 	int i;
 	char *str = va_arg(valist, char *);
 
+	if (str == NULL)
+		str = "(null)";
 	for (i = 0; str[i]; i++)
 	{
 		*n += 1;
