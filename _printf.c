@@ -98,8 +98,6 @@ int _printf(const char *format, ...)
 		{
 			i += 2;
 		}
-		if (!format[i + 1])
-			return (-1);
 		else
 		{
 			_putchar(format[i]);

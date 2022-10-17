@@ -11,7 +11,7 @@
 
 void print_char(va_list valist, int *n)
 {
-	char c = (char)va_arg(valist, int);
+	char c = va_arg(valist, int);
 
 	_putchar(c);
 	*n += 1;
@@ -31,7 +31,7 @@ void print_string(va_list valist, int *n)
 	char *str = va_arg(valist, char *);
 
 	if (str == NULL)
-		str = "(nil)";
+		str = "(null)";
 	for (i = 0; str[i]; i++)
 	{
 		*n += 1;
