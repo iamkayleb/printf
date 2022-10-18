@@ -7,7 +7,7 @@
  *
  * Return: a to the power of b
  */
-int _pow(int a, int b)
+unsigned long _pow(unsigned int a, unsigned int b)
 {
 	if (b == 0)
 		return (1);
