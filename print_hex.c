@@ -1,5 +1,46 @@
 #include "main.h"
 #include <stdio.h>
+
+/**
+ * print_hex - prints an unsigned int in hexadecimal
+ * @num: number to print in hexadecimal
+ * @letter_case: case of the alpha characters
+ *
+ * Return: void
+ */
+int print_hex(unsigned int num, int letter_case)
+{
+	unsigned int i, num_list[8], j, sum;
+	int count;
+	char diff;
+
+	j = 268435456; /* 16 ^ 7 */
+	num_list[0] = num / j;
+	for (i = 1; i < 8; i++)
+	{
+		j /= 16;
+		num_list[i] = (num / j) % 16;
+	}
+	if (letter_case)
+		diff = 'A' - ':';
+	else
+		diff = 'a' - ':';
+	sum = count = 0;
+	for (i = 0; i < 8; i++)
+	{
+		sum += num_list[i];
+		if (sum != 0 || i == 7)
+		{
+			if (num_list[i] < 10)
+				_putchar(num_list[i] + '0');
+			else
+				_putchar(num_list[i] + diff + '0');
+			count++;
+		}
+	}
+	return (count);
+}
+
 /**
  * hex_print - prints characters ascii value in hexadecimal
  * @c: character to print
@@ -23,40 +64,6 @@ int hex_print(char c)
 	}
 	return (count);
 }
-
-/**
- * print_special - prints a string and prints the asci code of no-printable
- * characters in hexadecimal
- * @valist: va_list variable
- * @n: numbers of charcters printed to stdout
- *
- * Return: void
- */
-void print_special(va_list valist, int *n)
-{
-	int i, hex_count;
-	char *str;
-
-	str = va_arg(valist, char *);
-	if (str == NULL)
-		str = "(null)";
-	for (i = 0; str[i]; i++)
-	{
-		if (str[i] < 32 || str[i] >= 127)
-		{
-			_putchar('\\');
-			_putchar('x');
-			hex_count = hex_print(str[i]);
-			*n += hex_count + 2;
-		}
-		else
-		{
-			_putchar(str[i]);
-			*n += 1;
-		}
-	}
-}
-
 
 /**
  * print_p - prints a memory address

@@ -96,46 +96,6 @@ void print_octal(va_list valist, int *n)
 }
 
 /**
- * print_hex - prints an unsigned int in hexadecimal
- * @n: number to print in hexadecimal
- * @letter_case: case of the alpha characters
- *
- * Return: void
- */
-int print_hex(unsigned int num, int letter_case)
-{
-	unsigned int i, num_list[8], j, sum;
-	int count;
-	char diff;
-
-	j = 268435456; /* 16 ^ 7 */
-	num_list[0] = num / j;
-	for (i = 1; i < 8; i++)
-	{
-		j /= 16;
-		num_list[i] = (num / j) % 16;
-	}
-	if (letter_case)
-		diff = 'A' - ':';
-	else
-		diff = 'a' - ':';
-	sum = count = 0;
-	for (i = 0; i < 8; i++)
-	{
-		sum += num_list[i];
-		if (sum != 0 || i == 7)
-		{
-			if (num_list[i] < 10)
-				_putchar(num_list[i] + '0');
-			else
-				_putchar(num_list[i] + diff + '0');
-			count++;
-		}
-	}
-	return (count);
-}
-
-/**
  * print_x - prints unsigned int in lowercase hexadecimal
  * @valist: va_list variable
  * @n: number of charcter printed to the stdout
