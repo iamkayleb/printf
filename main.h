@@ -6,6 +6,7 @@
 #include <stdarg.h>
 int _putchar(char c);
 unsigned long _pow(unsigned int a, unsigned int b);
+int hex_print(char c);
 /**
  * struct op - Struct op
  *
