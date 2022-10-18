@@ -60,6 +60,7 @@ void (*get_specifier(char c))(va_list, int *)
 		{'x', print_x},
 		{'X', print_X},
 		{'S', print_special},
+		{'p', print_p},
 		{'\0', NULL}
 	};
 
