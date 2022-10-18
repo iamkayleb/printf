@@ -97,7 +97,15 @@ int _printf(const char *format, ...)
 		{
 			op_func = get_specifier(format[i + 1]);
 			if (op_func)
+			{
 				op_func(args, &n);
+			}
+			else
+			{
+				_putchar(format[i]);
+				_putchar(format[i + 1]);
+				n += 2;
+			}
 			i += 2;
 		}
 		else if (format[i] == '%' && format[i + 1] == '%')
