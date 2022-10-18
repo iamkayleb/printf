@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 /**
  * hex_print - prints characters ascii value in hexadecimal
  * @c: character to print
@@ -67,10 +68,9 @@ void print_special(va_list valist, int *n)
 void print_p(va_list valist, int *n)
 {
 	unsigned int i, sum, num_list[16];
-	unsigned long j, num;
+	unsigned long int num = va_arg(valist, unsigned long), j;
 	char *str = "(null)";
 
-	num = va_arg(valist, unsigned long);
 	if (num == 0)
 	{
 		for (i = 0; str[i]; i++)
@@ -81,21 +81,22 @@ void print_p(va_list valist, int *n)
 		return;
 	}
 	j = _pow(16, 15); /* 16 ^ 15 */
+	_putchar('0');
+	_putchar('x');
+	*n += 2;
 	num_list[0] = num / j;
 	for (i = 1; i < 16; i++)
 	{
 		j /= 16;
 		num_list[i] = (num / j) % 16;
 	}
-	_putchar('0');
-	_putchar('x');
-	*n += 2;
+	sum = 0;
 	for (i = 0; i < 16; i++)
 	{
 		sum += num_list[i];
 		if (sum != 0 || i == 15)
 		{
-			if (num_list[i] > 10)
+			if (num_list[i] < 10)
 				_putchar(num_list[i] + '0');
 			else
 				_putchar(num_list[i] + ('a' - ':') + '0');
