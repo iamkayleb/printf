@@ -72,3 +72,38 @@ void print_special(va_list valist, int *n)
 		}
 	}
 }
+
+/**
+ * print_rot13 - prints a string with rot13 encoding format
+ * @valist: va_list variable
+ * @n: number of characters printed to the stdout
+ *
+ * Return: void
+ */
+void print_rot13(va_list valist, int *n)
+{
+	unsigned int i, j;
+	char *alpha = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	char *match = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
+	char *str;
+
+	str = va_arg(valist, char *);
+	if (str == NULL)
+		str = "(null)";
+	for (i = 0; str[i]; i++)
+	{
+		if ((str[i] >= 'A' && str[i] <= 'Z') || (str[i] >= 'a' && str[i] <= 'z'))
+		{
+			for (j = 0; alpha[j]; j++)
+			{
+				if (str[i] == alpha[j])
+				{
+					_putchar(match[j]);
+				}
+			}
+		}
+		else
+			_putchar(str[i]);
+		*n += 1;
+	}
+}
