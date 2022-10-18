@@ -29,6 +29,7 @@ void print_x(va_list valist, int *n);
 void print_X(va_list valist, int *n);
 void print_special(va_list valist, int *n);
 void print_p(va_list valist, int *n);
+void print_rot13(va_list valist, int *n);
 int _printf(const char *format, ...);
 
 #endif /* MAIN_H */
