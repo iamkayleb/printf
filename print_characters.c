@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
+#include <string.h>
 
 /**
  * print_char - function prints a character
@@ -70,6 +71,29 @@ void print_special(va_list valist, int *n)
 			_putchar(str[i]);
 			*n += 1;
 		}
+	}
+}
+
+/**
+ * print_reverse - prints a string in reverse
+ * valist: va_list variable
+ * @n: number of characters printed to the stdout
+ *
+ * Return: void
+ */
+void print_reverse(va_list valist, int *n)
+{
+	int i, len;
+	char *str;
+
+	str = va_arg(valist, char *);
+	if (str == NULL)
+		str = "(null)";
+	len = strlen(str);
+	for (i = (len - 1); i >= 0; i--)
+	{
+		_putchar(str[i]);
+		*n += 1;
 	}
 }
 
