@@ -93,13 +93,13 @@ int _printf(const char *format, ...)
 	va_start(args, format);
 	while (format && format[i])
 	{
-		if (format[i] == '%' && format[i + 1] != '%')
+		if (format[i] == '%' && format[i + 1] == '\0')
+			return (-1);
+		else if (format[i] == '%' && format[i + 1] != '%')
 		{
 			op_func = get_specifier(format[i + 1]);
 			if (op_func)
-			{
 				op_func(args, &n);
-			}
 			else
 			{
 				_putchar(format[i]);
@@ -113,10 +113,6 @@ int _printf(const char *format, ...)
 			_putchar('%');
 			i += 2;
 			n += 1;
-		}
-		else if (format[i] == '%' && format[i + 1] == '\0')
-		{
-			return (-1);
 		}
 		else
 		{
