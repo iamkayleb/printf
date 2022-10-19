@@ -76,7 +76,7 @@ void print_special(va_list valist, int *n)
 
 /**
  * print_reverse - prints a string in reverse
- * valist: va_list variable
+ * @valist: va_list variable
  * @n: number of characters printed to the stdout
  *
  * Return: void
