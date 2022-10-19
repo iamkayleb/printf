@@ -76,7 +76,7 @@ void print_p(va_list valist, int *n)
 {
 	unsigned int i, sum, num_list[16];
 	unsigned long int num = va_arg(valist, unsigned long), j;
-	char *str = "(null)";
+	char *str = "(nil)";
 
 	if (num == 0)
 	{
